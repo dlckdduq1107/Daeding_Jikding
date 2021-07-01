@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/tab_home"
+        android:enabled="true"
+        android:icon="@android:drawable/ic_menu_myplaces"
+        android:title="HOME"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/tab_find_circle"
+        android:enabled="true"
+        android:icon="@android:drawable/ic_menu_view"
+        android:title="동아리 찾기"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/tab_chat"
+        android:enabled="true"
+        android:icon="@android:drawable/ic_dialog_email"
+        android:title="채팅 목록"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/tab_setting"
+        android:enabled="true"
+        android:icon="@android:drawable/ic_menu_view"
+        android:title="설정"
+        app:showAsAction="ifRoom"/>
+</menu>
