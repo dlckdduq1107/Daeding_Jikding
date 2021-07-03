@@ -6,10 +6,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#FAE3D9"
-    tools:context=".Login">
+    tools:context=".resister">
 
     <TextView
-        android:id="@+id/banner"
+        android:id="@+id/resister_banner"
         android:layout_width="match_parent"
         android:layout_height="130dp"
         android:layout_marginTop="50dp"
@@ -49,28 +49,21 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
             <Button
-                android:id="@+id/login_btn"
-                android:layout_width="150dp"
-                android:layout_height="70dp"
-                android:layout_marginRight="10dp"
-                android:textSize="30sp"
-                android:backgroundTint="#61C0BF"
-                android:fontFamily="@font/cafe24ssurround"
-                android:text="로그인"
-                android:textColor="#FFFF"/>
-            <Button
-                android:id="@+id/register_btn"
-                android:layout_width="170dp"
+                android:id="@+id/btn_resister"
+                android:layout_width="190dp"
                 android:layout_height="70dp"
                 android:layout_marginLeft="10dp"
-                android:textSize="25sp"
                 android:backgroundTint="#61C0BF"
                 android:fontFamily="@font/cafe24ssurround"
-                android:text="회원가입"
+                android:text="가입완료"
+                android:textSize="30sp"
                 android:textColor="@color/white"/>
+
+
         </LinearLayout>
 
     </LinearLayout>
