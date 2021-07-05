@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "258362450015",
+    "firebase_url": "https://daeding-jikding-default-rtdb.firebaseio.com",
+    "project_id": "daeding-jikding",
+    "storage_bucket": "daeding-jikding.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:258362450015:android:ee6f4fa6f215b328a6bbea",
+        "android_client_info": {
+          "package_name": "com.example.daeding_jikding"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "258362450015-61n9ukl1f9b8m6b1akgkhv3uop3v9cjg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaGG9_vokWiaxEVScPyqflq9ZZsU4rc9c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "258362450015-61n9ukl1f9b8m6b1akgkhv3uop3v9cjg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
