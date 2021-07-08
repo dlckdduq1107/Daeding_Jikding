@@ -90,13 +90,6 @@ public class Login extends AppCompatActivity {
                         startActivity(intent);
                         finish();
                     }
-                    else{
-                        Toast.makeText(Login.this, "로그인 실패", Toast.LENGTH_SHORT).show();
-                        //현재화면 갱신
-                        Intent intent = getIntent();
-                        finish();
-                        startActivity(intent);
-                    }
                 }
             });
         }
@@ -109,8 +102,6 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //로그인요청
-                mEtEmail.setEnabled(false);
-                mEtPwd.setEnabled(false);
 
                 //로그인 progress diaglog 창 생성
                 ProgressDialog progressDialog = new ProgressDialog(Login.this);
@@ -162,12 +153,7 @@ public class Login extends AppCompatActivity {
                         }
                         else{
                             Toast.makeText(Login.this, "로그인 실패", Toast.LENGTH_SHORT).show();
-                            progressDialog.dismiss();//로그인 중 화면 없애고
-
-                            //현재화면 갱신
-                            Intent intent = getIntent();
-                            finish();
-                            startActivity(intent);
+                            progressDialog.dismiss();//로그인 중 화면 없앰
                         }
                     }
                 });
