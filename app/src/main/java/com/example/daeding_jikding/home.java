@@ -40,7 +40,7 @@ public class home extends Fragment {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
-    private ArrayList<CircleAccount> arrayList;
+    private ArrayList<Circle> arrayList;
     private FirebaseDatabase database;
     private DatabaseReference databaseReference;
     private DatabaseReference databaseReference_user;
@@ -97,7 +97,7 @@ public class home extends Fragment {
                 //파이어베이스 데이터베이스의 데이터를 받아오는 곳
                 arrayList.clear();//기존 배열 리스트가 존재하지 않게 초기화
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()){// 반복문으로 데이터 리스트를 추출해냄
-                    CircleAccount circle = snapshot.getValue(CircleAccount.class);//만들어놨던 CircleAccount객체에 데이터를 담는다.
+                    Circle circle = snapshot.getValue(Circle.class);//만들어놨던 CircleAccount객체에 데이터를 담는다.
                     if(userList.contains(circle.getCircle_name())){//동아리가 유저에 가입한 동아리에 있으면
                         arrayList.add(circle);//담은 데이터들을 배열리스트에 넣고 리사이클러뷰로 보낼준비
                     }

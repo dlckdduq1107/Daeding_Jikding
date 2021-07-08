@@ -21,11 +21,11 @@ import java.util.ArrayList;
 //동아리 리스트와 리사이클러뷰를 연결하는 어댑터
 public class CustomAdaptor extends RecyclerView.Adapter<CustomAdaptor.CustomViewHolder> {
 
-    private ArrayList<CircleAccount> arrayList;
+    private ArrayList<Circle> arrayList;
     private Context context;
 
 
-    public CustomAdaptor(ArrayList<CircleAccount> arrayList, Context context) {
+    public CustomAdaptor(ArrayList<Circle> arrayList, Context context) {
         this.arrayList = arrayList;
         this.context = context;
     }
