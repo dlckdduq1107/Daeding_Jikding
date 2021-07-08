@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".home">
+    tools:context=".home"
+    android:orientation="vertical">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/circle_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="home" />
+        android:layout_height="376dp"
+        />
 
-</FrameLayout>
+
+    <Button
+        android:id="@+id/make_circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="동아리 만들기" />
+
+</LinearLayout>

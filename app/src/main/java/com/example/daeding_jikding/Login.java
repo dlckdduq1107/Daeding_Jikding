@@ -92,6 +92,10 @@ public class Login extends AppCompatActivity {
                     }
                     else{
                         Toast.makeText(Login.this, "로그인 실패", Toast.LENGTH_SHORT).show();
+                        //현재화면 갱신
+                        Intent intent = getIntent();
+                        finish();
+                        startActivity(intent);
                     }
                 }
             });
@@ -158,6 +162,12 @@ public class Login extends AppCompatActivity {
                         }
                         else{
                             Toast.makeText(Login.this, "로그인 실패", Toast.LENGTH_SHORT).show();
+                            progressDialog.dismiss();//로그인 중 화면 없애고
+
+                            //현재화면 갱신
+                            Intent intent = getIntent();
+                            finish();
+                            startActivity(intent);
                         }
                     }
                 });
@@ -170,7 +180,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //회원가입 화면으로 이동
-                Toast.makeText(Login.this, "화면 전환", Toast.LENGTH_LONG).show();
+//                Toast.makeText(Login.this, "화면 전환", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(Login.this, resister.class);
                 startActivity(intent);
             }

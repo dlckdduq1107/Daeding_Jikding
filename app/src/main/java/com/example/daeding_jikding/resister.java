@@ -19,12 +19,17 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class resister extends AppCompatActivity {
 
     private FirebaseAuth mFirebaseAuth;//파이어베이스 인증
     private DatabaseReference mDatabaseRef; //실시간 데이터 베이스
     private EditText mEtEmail, mEtPwd; //회원가입 입력 필드
     private Button mBtnResister;// 회원가입 버튼
+
+    private List<String> circles = new ArrayList<>();//임시로 동아리 목록 생성
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +61,15 @@ public class resister extends AppCompatActivity {
                             account.setIdToken(firebaseUser.getUid());//고유값 설정
                             account.setEmailId(firebaseUser.getEmail());//파이어베이스로 부터 아이디 가져옴
                             account.setPassword(strPwd);
+
+                            //동아리 임시데이터 삽입
+                            circles.add("축구");
+                            circles.add("토익");
+                            circles.add("야구");
+                            account.setCircle_list(circles);
+
+
+
 
                             //setValue : 데이터베이스에 insert 행위
                             mDatabaseRef.child("UserAccount").child(firebaseUser.getUid()).setValue(account);
