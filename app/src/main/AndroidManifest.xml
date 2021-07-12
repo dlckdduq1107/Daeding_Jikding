@@ -13,6 +13,7 @@
         android:theme="@style/Theme.Daeding_Jikding">
         <activity android:name=".make_circle"></activity>
         <activity android:name=".resister" />
+        <activity android:name=".CircleActivity"></activity>
         <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
