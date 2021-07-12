@@ -67,9 +67,8 @@ public class resister extends AppCompatActivity {
                             account.setPassword(strPwd);
 
                             //동아리 임시데이터 삽입
-                            circles.add("축구");
-                            circles.add("토익");
-                            circles.add("야구");
+                            circles.add("AkRXtAGsb6ew3AB1clu6XLCzYLu11170");
+                            circles.add("AkRXtAGsb6ew3AB1clu6XLCzYLu12974");
                             account.setCircle_list(circles);
 
 

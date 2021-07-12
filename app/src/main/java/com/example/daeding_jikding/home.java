@@ -1,9 +1,11 @@
 package com.example.daeding_jikding;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -45,7 +47,7 @@ public class home extends Fragment {
     private DatabaseReference databaseReference;
     private DatabaseReference databaseReference_user;
     private FirebaseAuth mFirebaseAuth;//파이어베이스 인증
-    private List<String> userList;
+    private List<String> user_circle_List;
 
 
 
@@ -60,7 +62,7 @@ public class home extends Fragment {
         layoutManager = new LinearLayoutManager(container.getContext());
         recyclerView.setLayoutManager(layoutManager);
         arrayList = new ArrayList<>();//CircleAccount객체 담을 어레이 리스트( 어댑터 쪽으로)
-        userList = new ArrayList<>();//user정보 담을 어레이 리스트
+        user_circle_List = new ArrayList<>();//user정보 담을 어레이 리스트
 
         database = FirebaseDatabase.getInstance();// 파이어베이스 데이터베이스 연동
         mFirebaseAuth = FirebaseAuth.getInstance();
@@ -75,10 +77,10 @@ public class home extends Fragment {
         databaseReference_user.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                userList.clear();
+                user_circle_List.clear();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()){// 반복문으로 데이터 리스트를 추출해냄
                     String name = (String) snapshot.getValue();//circle_list의 요소를 하나씩 name으로 저장
-                    userList.add(name);//리스트에 저장
+                    user_circle_List.add(name);//리스트에 저장
                 }
             }
             @Override
@@ -89,7 +91,7 @@ public class home extends Fragment {
 
 
 
-        databaseReference = database.getReference("Daeding_Jikding/CircleAccount");//DB Circle 테이블 연동
+        databaseReference = database.getReference("Daeding_Jikding/Circle");//DB Circle 테이블 연동
 
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -98,9 +100,10 @@ public class home extends Fragment {
                 arrayList.clear();//기존 배열 리스트가 존재하지 않게 초기화
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()){// 반복문으로 데이터 리스트를 추출해냄
                     Circle circle = snapshot.getValue(Circle.class);//만들어놨던 CircleAccount객체에 데이터를 담는다.
-                    if(userList.contains(circle.getCircle_name())){//동아리가 유저에 가입한 동아리에 있으면
+                    if(user_circle_List.contains(circle.getCircleToken())){//동아리가 유저에 가입한 동아리에 있으면
                         arrayList.add(circle);//담은 데이터들을 배열리스트에 넣고 리사이클러뷰로 보낼준비
                     }
+
 
                 }
                 adapter.notifyDataSetChanged();//리스트 저장 및 새로고침
@@ -133,6 +136,13 @@ public class home extends Fragment {
         btn_make_circle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(container.getContext(), make_circle.class);
+                startActivity(intent);
+
+                //프래그먼트 업데이트 구현 필요
+//                FragmentTransaction ft = getFragmentManager().beginTransaction();
+//                ft.detach(this).attach(this).commit();
+
 
             }
         });
